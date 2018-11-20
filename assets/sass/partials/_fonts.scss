@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800');
+
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic');
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700');
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900');
+
+/* FLAT ICONS  */
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./assets/fonts/Flaticon.eot");
+  src: url("./assets/fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./assets/fonts/Flaticon.woff") format("woff"),
+       url("./assets/fonts/Flaticon.ttf") format("truetype"),
+       url("./assets/fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./assets/fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-price-tag:before { content: "\f100"; }
+.flaticon-price-tag-1:before { content: "\f101"; }
+.flaticon-house-outline:before { content: "\f102"; }
+.flaticon-water-cycle:before { content: "\f103"; }
+.flaticon-handshake:before { content: "\f104"; }
+.flaticon-apartment:before { content: "\f105"; }
+    
+    $font-Flaticon-price-tag: "\f100";
+    $font-Flaticon-price-tag-1: "\f101";
+    $font-Flaticon-house-outline: "\f102";
+    $font-Flaticon-water-cycle: "\f103";
+    $font-Flaticon-handshake: "\f104";
+    $font-Flaticon-apartment: "\f105";
+
+
+.fa-stack {
+    background-color: $green-icon;
+    border-radius: 100%;
+    /* padding: 1rem 2rem; */
+    width: 7rem;
+    line-height: 6rem;
+    height: 7rem;
+    
+    .fi {
+        font-size: 3rem;
+        color: white;
+    }
+}

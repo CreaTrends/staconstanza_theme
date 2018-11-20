@@ -1,0 +1,13 @@
+// Styling for the services section
+.service-heading {
+    margin: 15px 0;
+    text-transform: none;
+    margin-top: 20px;
+    font-size: 36px;
+    color: $title-grey;
+    @include main-font
+}
+
+.service-icon-background {
+  color: $green-icon !important;
+}

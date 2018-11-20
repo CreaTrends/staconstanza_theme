@@ -1,0 +1,40 @@
+// Variables
+
+// Restated Bootstrap Variables
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$primary: #4a7b3f !default;
+$green-icon :#6c8b65 !default;
+$green-link : #569371 !default;
+$menu-bg :rgba(48, 76, 41, .90) !important;
+$title-dark :#4a606b !default;
+$title-grey : #607D8B;
+
+
+//Colors
+$primaryColor: #4a7b3f; //Blue
+$secondaryColor: #3498DB; //Aqua
+$tertiaryColor: #E67E22; //Grey
+//Button Colors
+$buttonColors: (
+    primary :  #4a7b3f, 
+    info :  #3498DB, 
+    success :  #2ECC71, 
+    warning :  #F1C40F, 
+    danger :  #E74C3C, 
+    inverse :  #34495E, 
+    primaryColor :  $primaryColor, 
+    secondaryColor :  $secondaryColor, 
+    tertiaryColor :  $tertiaryColor
+);

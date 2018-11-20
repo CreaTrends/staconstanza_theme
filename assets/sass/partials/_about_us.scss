@@ -1,0 +1,48 @@
+// Styling for the about section
+.about-us {
+    position: relative;
+    padding: 8rem 3rem;
+    
+
+    &:before {
+        content: "";
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        background-color: $primary;
+        top: 0;
+        left: 0;
+        @media(min-width:992px) {
+        content: "";
+        width: 50%;
+        position: absolute;
+        height: 100%;
+        background-color: $primary;
+        top: 0;
+        left: 0;
+        }
+    }
+
+    &:after {
+        @media (min-width: 576px) {
+        position: absolute;
+        content: "";
+        width: 50%;
+        right: 0;
+        top: 0;
+        background-color: $white;
+        height: 100%;
+        background-image: url(http://localhost/santaconstanza/wp-content/uploads/2018/11/CF004804-e1450204585605.jpg);
+        background-position: right 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    }
+    h3.about-heading {
+        font-size: 2.3rem;
+        font-weight: 700;
+        margin-bottom: 0px;
+        text-transform: none;
+        @include heading-font;
+    }
+}

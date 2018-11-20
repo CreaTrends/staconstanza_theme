@@ -1,0 +1,166 @@
+@import "partials/variables";
+@import "partials/fonts";
+@import "partials/mixins";
+// globals
+
+// Global styling for this template
+body , html {
+    margin-top: 0px !important;
+}
+body {
+  overflow-x: hidden;
+  @include heading-font;
+}
+
+p {
+    color: $gray-900;
+    line-height: 21px;
+    font-size: .9rem;
+        @include heading-font;
+    font-weight: 500
+}
+
+a {
+  color: $primary;
+  &:hover {
+    color: darken($primary, 10%);
+  }
+}
+
+.text-primary {
+  color: $primary !important;
+
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  @include heading-font;
+}
+
+section {
+  padding: 100px 0;
+  h2.section-heading {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  h3.section-subheading {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 65px;
+    text-transform: none;
+    @include main-font;
+  }
+  h2.section-title {
+    font-size: 2.5rem;
+    color: $title-dark;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-transform: none;
+    @include main-font;
+  }
+
+    h4.heading-icon {
+        font-size: 1.3rem;
+        color: $green-link;
+        font-weight: 700;
+        text-transform: none;
+        margin-bottom: 1.3rem;
+        @include main-font;
+      }
+
+}
+@media(min-width:768px) {
+  section {
+    padding: 150px 0;
+  }
+}
+
+// Button Styles
+.btn {
+  @include menu-font;
+  font-weight: 700;
+}
+
+.btn-xl {
+  font-size: 18px;
+  padding: 20px 40px;
+}
+
+
+
+// Highlight color customization
+::-moz-selection {
+  background: $primary;
+  text-shadow: none;
+}
+
+::selection {
+  background: $primary;
+  text-shadow: none;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+.small-line {
+
+    color: $title-grey;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    &:after{
+        top: 13px;
+        content: '';
+        height: 2px;
+        width: 100px;
+        right: -120px;
+        top: 9px;
+        position: absolute;
+        background-color: $title-grey;
+    }
+    &.line-center{
+            &:before{
+            top: 13px;
+            content: '';
+            height: 2px;
+            width: 100px;
+            left: -120px;
+            top: 9px;
+            position: absolute;
+            background-color: $title-grey;
+            }
+        }
+    &.white {
+        color: $white;
+        &:after{
+          background-color: $white;  
+        }
+        
+    }
+
+
+}
+@include custom-bootstrap-btns;
+@import "partials/global";
+@import "partials/navbar";
+@import "partials/masthead";
+@import "partials/services";
+@import "partials/about_us";
+@import "partials/portfolio";
+@import "theme";

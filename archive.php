@@ -7,9 +7,13 @@
  * @package santaconstanza
  */
 
-get_header();
-?>
+get_header('servicio');
 
+
+
+
+?>
+asdasdsadsadsa waka wkwaa <?php echo get_post_type(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 

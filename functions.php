@@ -47,6 +47,7 @@ if ( ! function_exists( 'staconstanza_setup' ) ) :
 			'menu-1' => esc_html__( 'Primary', 'staconstanza' ),
 		) );
 
+
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -79,6 +80,10 @@ if ( ! function_exists( 'staconstanza_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+		add_image_size( 'staconstanza-blog-image', 1140, 760, true );
+		add_image_size( 'staconstanza-slider', 1200, 500, true );
+		add_image_size( 'staconstanza-portrait', 500, 700, true );
+		add_image_size( 'staconstanza-testimonial-portrait', 260, 300, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'staconstanza_setup' );
@@ -113,6 +118,43 @@ function staconstanza_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+			'name'          => __('Footer One','staconstanza'),
+			'id'            => 'footer-1',
+			'description'   => __('Footer First Widget','staconstanza'),
+			'before_widget' => '<div id="%1$s" class="widget col-md-3 col-sm-6 %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+	register_sidebar( array(
+			'name'          => __('Footer Two','staconstanza'),
+			'id'            => 'footer-2',
+			'description'   => __('Footer Second Widget','staconstanza'),
+			'before_widget' => '<div id="%1$s" class="widget col-md-3 col-sm-6 %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+	register_sidebar( array(
+			'name'          => __('Footer There','staconstanza'),
+			'id'            => 'footer-3',
+			'description'   => __('Footer Third Widget','staconstanza'),
+			'before_widget' => '<div id="%1$s" class="widget col-md-3 col-sm-6 %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+	register_sidebar( array(
+			'name'          => __('Footer Four','staconstanza'),
+			'id'            => 'footer-4',
+			'description'   => __('Footer Four Widget','staconstanza'),
+			'before_widget' => '<div id="%1$s" class="widget col-md-3 col-sm-6 %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
 }
 add_action( 'widgets_init', 'staconstanza_widgets_init' );
 
@@ -121,12 +163,13 @@ add_action( 'widgets_init', 'staconstanza_widgets_init' );
  */
 function staconstanza_scripts() {
 	
-	wp_enqueue_style( 'staconstanza-bootstrap_css', get_template_directory_uri() .'/css/bootstrap.min.css' );
-
+	wp_enqueue_style( 'bs4-min-css', 'https://blackrockdigital.github.io/startbootstrap-agency/vendor/bootstrap/css/bootstrap.min.css');
+	wp_enqueue_style( 'fontawesome-5', get_template_directory_uri() . '/assets/css/fontawesome-free/css/all.min.css');
 	wp_enqueue_style( 'staconstanza-style', get_stylesheet_uri() );
+	
 	wp_enqueue_script( 'jquery');
-	wp_enqueue_script('bootstrap_popper','https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js',array('jquery'), '20151215', true);
-	wp_enqueue_script( 'staconstanza-bootstrapjs', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '20151215', true );
+	
+	wp_enqueue_script( 'staconstanza-appjs', get_template_directory_uri() . '/assets/js/dist/app.min.js', array('jquery'), '20151215', true );
 
 	wp_enqueue_script( 'staconstanza-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -138,6 +181,21 @@ function staconstanza_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'staconstanza_scripts' );
 
+/**
+ * Allow svg files
+ */
+function add_file_types_to_uploads($file_types){
+$new_filetypes = array();
+$new_filetypes['svg'] = 'image/svg+xml';
+$file_types = array_merge($file_types, $new_filetypes );
+return $file_types;
+}
+add_action('upload_mimes', 'add_file_types_to_uploads');
+/**
+ * Implement the Custom Header feature.
+ */
+
+require get_template_directory() . '/inc/class.php';
 /**
  * Implement the Custom Header feature.
  */
@@ -157,11 +215,14 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
+// Custom Navbar
+require get_template_directory() . '/inc/custom-navbar.php';
 /**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
 
